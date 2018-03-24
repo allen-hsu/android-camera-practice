@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">CameraPartice</string>
+
+    <string name="title_camera">Camera</string>
+    <string name="title_normal">Normal</string>
+    <string name="title_random">Random</string>
+    <string name="title_notifications">Notifications</string>
+    <string name="permission_camera_rationale">打開相機權限</string>
+    <string name="button_allow">同意</string>
+    <string name="button_deny">拒絕</string>
+    <string name="permission_camera_denied">拒絕相機權限</string>
+    <string name="permission_camera_neverask">永不在問我相機權限</string>
+</resources>
