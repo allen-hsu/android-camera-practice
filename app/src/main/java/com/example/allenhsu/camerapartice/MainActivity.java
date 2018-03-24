@@ -32,8 +32,8 @@ public class MainActivity extends AppCompatActivity {
 
     @RawRes int vertexShader = R.raw.vertex_shader_base;
     @RawRes int[] randomFragmentShader = {
-//            R.raw.fragment_shader_gaussian_blur,
-            R.raw.fragment_shader_gaussian_blur,
+//            R.raw.fragment_shader_blur,
+            R.raw.fragment_shader_mosaic,
     };
     @Override
     protected void onCreate(Bundle savedInstanceState) {
