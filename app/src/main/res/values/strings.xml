@@ -10,4 +10,8 @@
     <string name="button_deny">拒絕</string>
     <string name="permission_camera_denied">拒絕相機權限</string>
     <string name="permission_camera_neverask">永不在問我相機權限</string>
+    <string name="title_blur">Blur</string>
+    <string name="title_gray">Gray</string>
+    <string name="title_sketch">Sketch</string>
+    <string name="title_mosaic">Mosaic</string>
 </resources>

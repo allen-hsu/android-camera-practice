@@ -6,8 +6,27 @@
         android:icon="@drawable/ic_home_black_24dp"
         android:title="@string/title_normal" />
 
+    <!--<item-->
+        <!--android:id="@+id/navigation_random"-->
+        <!--android:icon="@drawable/ic_dashboard_black_24dp"-->
+        <!--android:title="@string/title_random" />-->
+
     <item
-        android:id="@+id/navigation_random"
-        android:icon="@drawable/ic_dashboard_black_24dp"
-        android:title="@string/title_random" />
+        android:id="@+id/navigation_blur"
+        android:icon="@drawable/ic_home_black_24dp"
+        android:title="@string/title_blur" />
+
+    <item
+        android:id="@+id/navigation_gray"
+        android:icon="@drawable/ic_home_black_24dp"
+        android:title="@string/title_gray" />
+
+    <item
+        android:id="@+id/navigation_sketch"
+        android:icon="@drawable/ic_home_black_24dp"
+        android:title="@string/title_sketch" />
+    <item
+        android:id="@+id/navigation_mosaic"
+        android:icon="@drawable/ic_home_black_24dp"
+        android:title="@string/title_mosaic" />
 </menu>

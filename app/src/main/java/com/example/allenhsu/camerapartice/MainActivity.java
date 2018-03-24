@@ -24,7 +24,7 @@ import permissions.dispatcher.RuntimePermissions;
 
 @RuntimePermissions
 public class MainActivity extends AppCompatActivity {
-//
+
     private GLSurfaceView glSurfaceView;
     private CameraRender cameraRender = new CameraRender();
     private BottomNavigationView bottomNavigationView;
@@ -32,8 +32,10 @@ public class MainActivity extends AppCompatActivity {
 
     @RawRes int vertexShader = R.raw.vertex_shader_base;
     @RawRes int[] randomFragmentShader = {
-//            R.raw.fragment_shader_blur,
+            R.raw.fragment_shader_blur,
             R.raw.fragment_shader_mosaic,
+            R.raw.fragment_shader_sketch,
+            R.raw.fragment_shader_gray,
     };
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -57,8 +59,20 @@ public class MainActivity extends AppCompatActivity {
                 case R.id.navigation_normal:
                     cameraRender.changeShader(Utils.readShaderFromResource(weakReference.get(), vertexShader), Utils.readShaderFromResource(weakReference.get(), R.raw.fragment_shader_base));
                     break;
-                case R.id.navigation_random:
-                    cameraRender.changeShader(Utils.readShaderFromResource(weakReference.get(), vertexShader), Utils.readShaderFromResource(weakReference.get(), getRandomShader()));
+//                case R.id.navigation_random:
+//                    cameraRender.changeShader(Utils.readShaderFromResource(weakReference.get(), vertexShader), Utils.readShaderFromResource(weakReference.get(), getRandomShader()));
+//                    break;
+                case R.id.navigation_blur:
+                    cameraRender.changeShader(Utils.readShaderFromResource(weakReference.get(), vertexShader), Utils.readShaderFromResource(weakReference.get(), R.raw.fragment_shader_blur));
+                    break;
+                case R.id.navigation_gray:
+                    cameraRender.changeShader(Utils.readShaderFromResource(weakReference.get(), vertexShader), Utils.readShaderFromResource(weakReference.get(), R.raw.fragment_shader_gray));
+                    break;
+                case R.id.navigation_sketch:
+                    cameraRender.changeShader(Utils.readShaderFromResource(weakReference.get(), vertexShader), Utils.readShaderFromResource(weakReference.get(), R.raw.fragment_shader_sketch));
+                    break;
+                case R.id.navigation_mosaic:
+                    cameraRender.changeShader(Utils.readShaderFromResource(weakReference.get(), vertexShader), Utils.readShaderFromResource(weakReference.get(), R.raw.fragment_shader_mosaic));
                     break;
             }
             return true;
