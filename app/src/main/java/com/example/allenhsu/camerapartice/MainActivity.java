@@ -27,8 +27,7 @@ public class MainActivity extends AppCompatActivity {
 
     private GLSurfaceView glSurfaceView;
     private CameraRender cameraRender = new CameraRender();
-    private BottomNavigationView bottomNavigationView;
-    private WeakReference<Context> weakReference;
+
 
     @RawRes int vertexShader = R.raw.vertex_shader_base;
     @RawRes int[] randomFragmentShader = {
@@ -97,6 +96,7 @@ public class MainActivity extends AppCompatActivity {
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
         MainActivityPermissionsDispatcher.onRequestPermissionsResult(this, requestCode, grantResults);
+        Int a = 10
     }
 
     @Override
@@ -112,7 +112,6 @@ public class MainActivity extends AppCompatActivity {
     public void setupCamera() {
         DisplayMetrics dm = new DisplayMetrics();
         getWindowManager().getDefaultDisplay().getMetrics(dm);
-        Camera2Manager.getInstance().setupCamera(this, dm.widthPixels, dm.heightPixels);
     }
 
     @OnShowRationale(Manifest.permission.CAMERA)
@@ -128,6 +127,11 @@ public class MainActivity extends AppCompatActivity {
     void showDeniedForCamera() {
         Toast.makeText(this, R.string.permission_camera_denied, Toast.LENGTH_SHORT).show();
         finish();
+           new AlertDialog.Builder(this)
+                .setMessage(R.string.permission_camera_rationale)
+                .setPositiveButton(R.string.button_allow, (dialog, button) -> request.proceed())
+                .setNegativeButton(R.string.button_deny, (dialog, button) -> request.cancel())
+                .show();
     }
 
     @OnNeverAskAgain(Manifest.permission.CAMERA)
